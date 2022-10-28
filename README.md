@@ -6,6 +6,7 @@ This repository demonstrate EIP-2535 Diamond standard reference implementation
 
 - https://eips.ethereum.org/EIPS/eip-2535
 - https://soliditydeveloper.com/eip-2535
+  https://medium.com/cartesi/upgrading-smart-contract-code-and-storage-layout-with-eip-2535-diamonds-31e0aff5d255
 - https://github.com/ethereum/EIPs/blob/master/EIPS/eip-2535.md
 - https://github.com/mudgen/diamond-3
 - https://github.com/mudgen/diamond-foundry
@@ -23,3 +24,5 @@ This repository demonstrate EIP-2535 Diamond standard reference implementation
 - https://www.quicknode.com/guides/smart-contract-development/the-diamond-standard-eip-2535-explained-part-1
 - https://ethereum.stackexchange.com/questions/113775/eip-2535-diamond-implementation-how-to
 - https://bean.money/blog/beanstalk-eip-2535
+- https://bitsbyblocks.com/eip-2535-diamond-standard-explained-part-1-why-diamonds/
+- https://bitsbyblocks.com/eip-2535-diamond-standard-explained-part-2-what-are-diamonds-and-how-they-work/
