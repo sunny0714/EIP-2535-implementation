@@ -2,11 +2,17 @@
 pragma solidity ^0.8.0;
 
 contract Test1Facet {
+
+    uint256 private count = 0;
     event TestEvent(address something);
 
-    function test1Func1() external {}
+    function test1Func1() external {
+        count++;
+    }
 
-    function test1Func2() external {}
+    function test1Func2() external view returns (uint256){
+        return count;
+    }
 
     function test1Func3() external {}
 
