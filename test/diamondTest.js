@@ -67,10 +67,13 @@ describe('DiamondTest', async function () {
     )
   })
 
-  it('should add test1 functions', async () => {
+  it('should add test1 functions and not update storage state on Diamond Facet', async () => {
     const Test1Facet = await ethers.getContractFactory('Test1Facet')
     const test1Facet = await Test1Facet.deploy()
     await test1Facet.deployed()
+    await test1Facet.test1Func1();
+    assert.equal(1, (await test1Facet.test1Func2()).toString())
+
     addresses.push(test1Facet.address)
     const selectors = getSelectors(test1Facet).remove(['supportsInterface(bytes4)'])
     tx = await diamondCutFacet.diamondCut(
@@ -86,6 +89,15 @@ describe('DiamondTest', async function () {
     }
     result = await diamondLoupeFacet.facetFunctionSelectors(test1Facet.address)
     assert.sameMembers(result, selectors)
+
+    const test1FacetD = await ethers.getContractAt('Test1Facet', diamondAddress)
+    assert.equal(0, (await test1FacetD.test1Func2()).toString())
+    await test1FacetD.test1Func1()
+    assert.equal(1, (await test1FacetD.test1Func2()).toString())
+    await test1FacetD.test1Func1()
+    assert.equal(2, (await test1FacetD.test1Func2()).toString())
+
+    assert.equal(1, (await test1Facet.test1Func2()).toString())
   })
 
   it('should test function call', async () => {
