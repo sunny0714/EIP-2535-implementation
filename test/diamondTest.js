@@ -258,4 +258,49 @@ describe('DiamondTest', async function () {
     assert.sameMembers(facets[findAddressPositionInFacets(addresses[3], facets)][1], getSelectors(Test1Facet))
     assert.sameMembers(facets[findAddressPositionInFacets(addresses[4], facets)][1], getSelectors(Test2Facet))
   })
+
+  it('should add Manager functions and not update storage state on Diamond Facet', async () => {
+    const ManagerFacet = await ethers.getContractFactory('ManagerFacet')
+    const managerFacet = await ManagerFacet.deploy()
+    await managerFacet.deployed()
+
+    const selectors = getSelectors(managerFacet)
+    // Be careful of the gas amount when calling diamondCut function
+    tx = await diamondCutFacet.diamondCut(
+      [{
+        facetAddress: managerFacet.address,
+        action: FacetCutAction.Add,
+        functionSelectors: selectors
+      }],
+      ethers.constants.AddressZero, '0x', { gasLimit: 1200000 })
+    receipt = await tx.wait()
+    if (!receipt.status) {
+      throw Error(`Diamond upgrade failed: ${tx.hash}`)
+    }
+    result = await diamondLoupeFacet.facetFunctionSelectors(managerFacet.address)
+    assert.sameMembers(result, selectors)
+
+    const managerFacetD = await ethers.getContractAt('ManagerFacet', diamondAddress)
+    assert.equal(ethers.constants.AddressZero, await managerFacetD.autoRedeemTokenAddress())
+    await managerFacetD.setuARTokenAddress('0xc6fa133f3290e14Ad91C7449f8D8101A6f894E25')
+    assert.equal('0xc6fa133f3290e14Ad91C7449f8D8101A6f894E25', await managerFacetD.autoRedeemTokenAddress())
+    assert.equal(ethers.constants.AddressZero, await managerFacet.autoRedeemTokenAddress())
+
+    // Need to check why debtCouponAddress is not zero address, just 0x0000000000000000000000000000000000000002
+    console.log('debtCouponAddress: ', await managerFacetD.debtCouponAddress())
+    console.log('dollarTokenAddress: ', await managerFacetD.dollarTokenAddress())
+    console.log('couponCalculatorAddress: ', await managerFacetD.couponCalculatorAddress())
+    console.log('dollarMintingCalculatorAddress: ', await managerFacetD.dollarMintingCalculatorAddress())
+    console.log('bondingShareAddress: ', await managerFacetD.bondingShareAddress())
+    console.log('bondingContractAddress: ', await managerFacetD.bondingContractAddress())
+    console.log('stableSwapMetaPoolAddress: ', await managerFacetD.stableSwapMetaPoolAddress())
+    console.log('curve3PoolTokenAddress: ', await managerFacetD.curve3PoolTokenAddress())
+    console.log('treasuryAddress: ', await managerFacetD.treasuryAddress())
+    console.log('governanceTokenAddress: ', await managerFacetD.governanceTokenAddress())
+    console.log('sushiSwapPoolAddress: ', await managerFacetD.sushiSwapPoolAddress())
+    console.log('masterChefAddress: ', await managerFacetD.masterChefAddress())
+    console.log('formulasAddress: ', await managerFacetD.formulasAddress())
+    console.log('uarCalculatorAddress: ', await managerFacetD.uarCalculatorAddress())
+
+  })
 })
