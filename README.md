@@ -10,12 +10,11 @@ The standard loupe functions have been gas-optimized in this implementation and 
 
 1. Clone this repo:
 ```console
-git clone git@github.com:mudgen/diamond-3-hardhat.git
+git clone git@github.com:sunny0714/EIP-2535-implementation.git
 ```
-
 2. Install NPM packages:
 ```console
-cd diamond-3-hardhat
+cd EIP-2535-implementation
 npm install
 ```
 
@@ -96,10 +95,6 @@ Similarly you need to use the ABI of a facet in Solidity code in order to call f
 string result = MyUsefulFacet(address(diamondContract)).getResult()
 ```
 
-## Get Help and Join the Community
-
-If you need help or would like to discuss diamonds then send me a message [on twitter](https://twitter.com/mudgen), or [email me](mailto:nick@perfectabstractions.com). Or join the [EIP-2535 Diamonds Discord server](https://discord.gg/kQewPw2).
-
 ## Useful Links
 1. [Introduction to the Diamond Standard, EIP-2535 Diamonds](https://eip2535diamonds.substack.com/p/introduction-to-the-diamond-standard)
 1. [EIP-2535 Diamonds](https://github.com/ethereum/EIPs/issues/2535)
@@ -109,17 +104,7 @@ If you need help or would like to discuss diamonds then send me a message [on tw
 1. [Upgradeable smart contracts using the Diamond Standard](https://hiddentao.com/archives/2020/05/28/upgradeable-smart-contracts-using-diamond-standard)
 1. [buidler-deploy supports diamonds](https://github.com/wighawag/buidler-deploy/)
 
-## Author
-
-This example implementation was written by Nick Mudge.
-
-Contact:
-
-- https://twitter.com/mudgen
-- nick@perfectabstractions.com
-
 ## License
 
 MIT license. See the license file.
 Anyone can use or modify this software for their purposes.
-
