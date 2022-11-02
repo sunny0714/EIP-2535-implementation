@@ -26,3 +26,8 @@ This repository demonstrate EIP-2535 Diamond standard reference implementation
 - https://bean.money/blog/beanstalk-eip-2535
 - https://bitsbyblocks.com/eip-2535-diamond-standard-explained-part-1-why-diamonds/
 - https://bitsbyblocks.com/eip-2535-diamond-standard-explained-part-2-what-are-diamonds-and-how-they-work/
+
+## Github Projects using Diamonds
+
+- https://github.com/aavegotchi/aavegotchi-contracts
+- https://github.com/chiru-labs/ERC721A-Upgradeable
