@@ -31,3 +31,8 @@ This repository demonstrate EIP-2535 Diamond standard reference implementation
 
 - https://github.com/aavegotchi/aavegotchi-contracts
 - https://github.com/chiru-labs/ERC721A-Upgradeable
+- https://github.com/pie-dao/PieVaults
+
+## Commmon Errors and Questions
+
+- https://eip2535diamonds.substack.com/p/common-diamond-errors
