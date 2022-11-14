@@ -22,6 +22,7 @@ This repository demonstrate EIP-2535 Diamond standard reference implementation
 - https://forum.openzeppelin.com/t/introduction-to-the-diamond-standard-eip-2535-diamonds/12505
 - https://github.com/OpenZeppelin/openzeppelin-contracts/issues/2793
 - https://www.quicknode.com/guides/smart-contract-development/the-diamond-standard-eip-2535-explained-part-1
+- https://www.quicknode.com/guides/smart-contract-development/the-diamond-standard-eip-2535-explained-part-2
 - https://ethereum.stackexchange.com/questions/113775/eip-2535-diamond-implementation-how-to
 - https://bean.money/blog/beanstalk-eip-2535
 - https://bitsbyblocks.com/eip-2535-diamond-standard-explained-part-1-why-diamonds/
