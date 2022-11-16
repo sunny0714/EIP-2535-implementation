@@ -44,7 +44,7 @@ Openzeppelin library currently don't use Diamond Storage, so can't use contracts
 
 - https://github.com/solidstate-network/solidstate-solidity
 
-## Construstors for facets
+## Constructors for facets
 
 - https://eip2535diamonds.substack.com/p/constructor-functions-dont-work-in
 
