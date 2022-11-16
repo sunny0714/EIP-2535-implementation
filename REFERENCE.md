@@ -37,3 +37,17 @@ This repository demonstrate EIP-2535 Diamond standard reference implementation
 ## Commmon Errors and Questions
 
 - https://eip2535diamonds.substack.com/p/common-diamond-errors
+
+## EIP-2535 Compatible libraries
+
+Openzeppelin library currently don't use Diamond Storage, so can't use contracts from OZ, instead of it, use below library
+
+- https://github.com/solidstate-network/solidstate-solidity
+
+## Construstors for facets
+
+- https://eip2535diamonds.substack.com/p/constructor-functions-dont-work-in
+
+## How storage works in diamond
+
+- https://eip2535diamonds.substack.com/p/how-storage-works-in-eip2535-diamonds
