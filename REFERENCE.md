@@ -51,3 +51,7 @@ Openzeppelin library currently don't use Diamond Storage, so can't use contracts
 ## How storage works in diamond
 
 - https://eip2535diamonds.substack.com/p/how-storage-works-in-eip2535-diamonds
+
+## Support etherscan in your diamond
+
+- https://github.com/zdenham/diamond-etherscan
